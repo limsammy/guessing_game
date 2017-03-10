@@ -1,8 +1,3 @@
-require "pry"
-
-puts "I have generated a random number for you to guess, what is your guess?"
-
-# generate random number between 1 and 100
 class Number
 
 	attr_reader :value
@@ -13,7 +8,6 @@ class Number
 
 end
 
-# prompt user to guess number
 @n = Number.new
 
 def game
@@ -26,9 +20,11 @@ def game
 
 	loop do
 
+		puts "I have generated a random number for you to guess."
+
 		print("Please input your guess or enter the secret cheat command > ")
 		input = gets.chomp
-		
+
 		if(input.to_s == "c" || input.to_s == "cheat")
 			puts "Expected answer: #{@n.value}"
 		elsif(input.to_i > @n.value)
