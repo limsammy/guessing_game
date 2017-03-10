@@ -20,9 +20,12 @@ def game
 	loop do
 		print("Please input your guess > ")
 		input = gets.chomp.to_i
-		if(input != @n.value)
-			puts "Guess again..."
-		else
+		# binding.pry
+		if(input > @n.value)
+			puts "Your guess is higher than the actual value! Please guess again..."
+		elsif(input < @n.value)
+			puts "Your guess is lower than the actual value! Please guess again..."
+		elsif(input == @n.value)
 			puts "You guessed #{input} correctly!"
 			break
 		end
